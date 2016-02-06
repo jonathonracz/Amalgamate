@@ -29,7 +29,7 @@
 #include <regex>
 #include <unordered_map>
 
-#include "juce_core_amalgam.h"
+#include <JuceHeader.h>
 
 using namespace juce;
 
@@ -751,10 +751,10 @@ int main (int argc, char* argv[])
       {
         if (value.contains ("="))
         {
-          String name = value.upToFirstOccurrenceOf ("=", false, false);
+          String symbol = value.upToFirstOccurrenceOf ("=", false, false);
           String define = value.fromFirstOccurrenceOf ("=", false, false);
 
-          amalgamator.addDefine (name, define);
+          amalgamator.addDefine (symbol, define);
         }
         else
         {
@@ -897,7 +897,7 @@ int main (int argc, char* argv[])
     std::cout << "    -f {file|macro}   Force reinclusion of the specified file or macro on" << "\n";
     std::cout << "                      all appearances in #include lines." << "\n";
     std::cout << "  " << "\n";
-    std::cout << "    -p {file|macro}   Prevent reinclusion of the specified file or macro on" << "\n";
+    std::cout << "    -p {file|macro}   Prevent reinclusion of the specified file or macro on" << "\n";.
     std::cout << "                      subsequent appearances in #include lines." << "\n";
     std::cout << "  " << "\n";
     std::cout << "    -d {name}={file}  Use {file} for macro {name} if it appears in an #include" << "\n";
